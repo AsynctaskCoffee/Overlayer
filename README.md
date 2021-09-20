@@ -1,27 +1,23 @@
-# AndroidKotlinMVPTemplate
-It's an android app with latest MVP design pattern developed in Kotlin language.
+# Overlayer
+Thanks to this application, you can add and edit beautiful effects on your photos.
 
-It contains the following things:
+## Why this project exists
+This project arose from the idea of turning a small part of freelance project I did a long time ago into a library. With TinderLike Cards library, you can easily have a tinder-style design. Since the project was written in the past, it may have problems. I will continue to improve the library with your help. Please be sure to report any issues you find. I took the structure of listview as an example for myself. You can easily include it in your project with the use of a simple adapter.
 
-  * Latest MVP design pattern
-  * Rx Java, Rx Android, Rx Kotlin
-  * Dagger for dependency injection
-  * Retrofit2 for network API calls
-  * Room for local database
-  * Picasso for image loading
+## Features
+- [x] Kotlin
+- [x] Stylish Design
+- [x] RxJava
+- [x] Customization
+- [x] CrashSafe
+- [x] Canvas, Matrix
+- [x] MVP
+- [x] Pinch-Zoom and Drag via gestures
+- [x] Room with smart blob workers
+- [x] Application Variants
 
-In this project we used above dependencies implementation along with sample code.
-
-WE ARE (DH ANDROID TEAM) NOT AUTHOR OF THIS PROJECT
-
-Licensed under the Apache License, Version 2.0 (the "License");
-you may not use this file except in compliance with the License.
-You may obtain a copy of the License at
-
-     http://www.apache.org/licenses/LICENSE-2.0
-
-Unless required by applicable law or agreed to in writing, software
-distributed under the License is distributed on an "AS IS" BASIS,
-WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-See the License for the specific language governing permissions and
-limitations under the License.
+## Previews
+<img src="previews/ssp1.jpg" width="250"> <img src="previews/ssp2.jpg" width="250"> 
+<img src="previews/ssp3.jpg" width="250"> <img src="previews/ssp4.jpg" width="250"> 
+<img src="previews/ssp5.jpg" width="250"> <img src="previews/ssp6.jpg" width="250"> 
+<img src="previews/ssp7.jpg" width="250"> <img src="previews/ssp8.jpg" width="250"> 
