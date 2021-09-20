@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Overlayer</string>
+    <string name="loading">Loading&#8230;</string>
+    <string name="please_wait">Please wait&#8230;</string>
+</resources>

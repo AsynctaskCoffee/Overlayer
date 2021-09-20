@@ -1,0 +1,86 @@
+// Top-level build file where you can add configuration options common to all sub-projects/modules.
+
+buildscript {
+    ext.kotlin_version = '1.3.71'
+    ext.serialization_version = '0.9.1'
+    repositories {
+        google()
+        jcenter()
+        maven { url "https://kotlin.bintray.com/kotlinx" }
+        maven {
+            url 'https://maven.fabric.io/public'
+        }
+        maven { url "https://jitpack.io" }
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:4.0.0'
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:1.3.72"
+        classpath "org.jetbrains.kotlin:kotlin-serialization:1.3.72"
+        classpath 'io.fabric.tools:gradle:1.31.2'
+    }
+}
+
+allprojects {
+    repositories {
+        google()
+        jcenter()
+        maven { url "https://jitpack.io" }
+        maven { url 'https://maven.google.com/' }
+    }
+}
+
+ext {
+    // Sdk and tools
+    minSdkVersion = 26
+    targetSdkVersion = 29
+    compileSdkVersion = 29
+    buildToolsVersion = '29.0.2'
+
+    // App dependencies
+    daggerVersion = '2.16'
+    retrofitVersion = '2.4.0'
+    lifeCycleVersion = '2.0.0'
+    roomVersion = "2.1.0"
+    mlKitVersion = "19.0.2"
+}
+
+ext.libraries = [
+        appCompact                : "androidx.appcompat:appcompat:1.0.0",
+        constraintLayout          : "androidx.constraintlayout:constraintlayout:2.0.0-beta4",
+        materialComponents        : "com.google.android.material:material:1.0.0",
+        recyclerView              : "androidx.recyclerview:recyclerview:1.1.0-beta01",
+
+        lifeCycleRuntime          : "androidx.lifecycle:lifecycle-runtime:$lifeCycleVersion",
+        lifeCycleRuntimeExtensions: "androidx.lifecycle:lifecycle-extensions:$lifeCycleVersion",
+        lifeCycleCompiler         : "androidx.lifecycle:lifecycle-compiler:$lifeCycleVersion",
+
+        roomRuntime               : "androidx.room:room-runtime:$roomVersion",
+        roomCompiler              : "androidx.room:room-compiler:$roomVersion",
+        roomRxJava2               : "androidx.room:room-rxjava2:$roomVersion",
+
+        rxJava                    : "io.reactivex.rxjava2:rxjava:2.1.8",
+        rxAndroid                 : "io.reactivex.rxjava2:rxandroid:2.0.1",
+        rxKotlin                  : "io.reactivex.rxjava2:rxkotlin:2.3.0",
+        okhttpLogging             : "com.squareup.okhttp3:logging-interceptor:3.10.0",
+        retrofitConverter         : "com.squareup.retrofit2:converter-gson:$retrofitVersion",
+        retrofit                  : "com.squareup.retrofit2:retrofit:$retrofitVersion",
+        retrofitRxJava2Adapter    : "com.squareup.retrofit2:adapter-rxjava2:$retrofitVersion",
+
+        dagger                    : "com.google.dagger:dagger:$daggerVersion",
+        daggerAndroid             : "com.google.dagger:dagger-android:$daggerVersion",
+        daggerAndroidSupport      : "com.google.dagger:dagger-android-support:$daggerVersion",
+        daggerCompiler            : "com.google.dagger:dagger-compiler:$daggerVersion",
+        daggerAndroidProcessor    : "com.google.dagger:dagger-android-processor:$daggerVersion",
+
+        multidex                  : 'androidx.multidex:multidex:2.0.0',
+        kotlinStdLib              : "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version",
+
+        //Image loading
+        imageLoader               : "com.squareup.picasso:picasso:2.71828",
+
+        preferences               : "androidx.preference:preference-ktx:1.1.0"
+]
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}

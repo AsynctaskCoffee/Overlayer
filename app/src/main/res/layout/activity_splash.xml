@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:animateLayoutChanges="true"
+    android:background="@drawable/background_blur"
+    android:gravity="center"
+    android:orientation="vertical"
+    tools:context=".ui.components.splash.SplashActivity">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_weight="1" />
+
+    <TextView
+        android:id="@+id/stitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/pasifico"
+        android:gravity="center"
+        android:text=" - Overlay Shoot - "
+        android:textColor="#ffffff"
+        android:textSize="43sp"
+        android:visibility="visible" />
+
+    <TextView
+        android:id="@+id/sdesc"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd="30dp"
+        android:gravity="center"
+        android:includeFontPadding="false"
+        android:text="Photo Editor and Bla Bla"
+        android:textColor="#aaffffff"
+        android:textSize="18sp"
+        android:visibility="visible" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_weight="1" />
+
+    <LinearLayout
+        android:id="@+id/filterBtn"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:background="@drawable/selection_component"
+        android:gravity="center"
+        android:onClick="selectPhoto"
+        android:orientation="vertical">
+
+        <ImageView
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:src="@drawable/ic_camera"
+            android:tint="#ffffff" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:gravity="center"
+            android:text="Overlay"
+            android:textColor="#ffffff" />
+
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_weight="1" />
+</LinearLayout>

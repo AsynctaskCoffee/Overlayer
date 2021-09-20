@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <dimen name="spacing_nano">2dp</dimen>
+    <dimen name="spacing_micro">4dp</dimen>
+    <dimen name="spacing_normal">8dp</dimen>
+    <dimen name="spacing_medium">12dp</dimen>
+    <dimen name="spacing_medium2">14dp</dimen>
+    <dimen name="spacing_double">16dp</dimen>
+    <dimen name="spacing_double2">32dp</dimen>
+    <dimen name="spacing_double3">64dp</dimen>
+    <dimen name="btn_corner_radius">2dp</dimen>
+    <dimen name="btn_min_width">88dp</dimen>
+    <dimen name="btn_min_height">36dp</dimen>
+    <dimen name="btn_flat_padding">8dp</dimen>
+    <dimen name="btn_margin">4dp</dimen>
+    <dimen name="btn_padding">16dp</dimen>
+</resources>
