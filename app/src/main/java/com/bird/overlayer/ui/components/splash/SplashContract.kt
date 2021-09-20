@@ -6,6 +6,11 @@ interface SplashContract {
 
     interface View : BaseContract.View {
         fun initUI()
+        fun showToast(title: String)
+        fun showProgress()
+        fun hideProgress()
+        fun showProgressWithTitle(title: String)
+        fun onDataReady()
     }
 
     interface Presenter : BaseContract.Presenter<View>

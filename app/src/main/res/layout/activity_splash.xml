@@ -41,7 +41,58 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="0dp"
-        android:layout_weight="1" />
+        android:layout_weight=".5" />
+
+    <LinearLayout
+        android:id="@+id/loadingContainer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/infoText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="30dp"
+            android:layout_marginEnd="30dp"
+            android:layout_marginBottom="5dp"
+            android:gravity="center"
+            android:includeFontPadding="false"
+            android:text="Please wait..."
+            android:textColor="#ffffff"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            android:visibility="visible" />
+
+
+        <ProgressBar
+            android:id="@+id/progressBar"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:alpha=".9"
+            android:max="5"
+            android:progress="0"
+            android:progressTint="#B22222"
+            android:scaleY="5" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="30dp"
+            android:layout_marginBottom="5dp"
+            android:gravity="center"
+            android:includeFontPadding="false"
+            android:text="we are optimizing the app for data saving\nplease wait a bit :)"
+            android:textColor="#ffffff"
+            android:textSize="11sp"
+            android:textStyle="bold"
+            android:visibility="visible" />
+
+
+    </LinearLayout>
 
     <LinearLayout
         android:id="@+id/filterBtn"
@@ -50,7 +101,8 @@
         android:background="@drawable/selection_component"
         android:gravity="center"
         android:onClick="selectPhoto"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:visibility="gone">
 
         <ImageView
             android:layout_width="50dp"

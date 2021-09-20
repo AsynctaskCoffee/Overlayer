@@ -6,6 +6,7 @@ import android.content.ContentValues;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
+import android.graphics.Color;
 import android.net.Uri;
 import android.provider.MediaStore;
 import android.widget.Toast;
@@ -29,7 +30,6 @@ public class SaveAndShare {
             try {
                 String path1 = android.os.Environment.getExternalStorageDirectory()
                         .toString();
-                //Log.i("in save()", "after mkdir");
                 File file = new File(path1 + "/" + "Overlayer");
                 if (!file.exists())
                     file.mkdirs();
@@ -41,10 +41,9 @@ public class SaveAndShare {
 
                 filename = new File(file.getAbsolutePath() + "/" + DEFAULT_IMAGE_NAME
                         + ".jpg");
-                //Log.i("in save()", "after file");
                 FileOutputStream out = new FileOutputStream(filename);
-                //Log.i("in save()", "after outputstream");
-                bmImg.compress(Bitmap.CompressFormat.JPEG, 90, out);
+
+                bmImg.compress(Bitmap.CompressFormat.PNG, 100, out);
                 out.flush();
                 out.close();
 
@@ -93,10 +92,10 @@ public class SaveAndShare {
                 .setTitle(title)
                 .setContent(description)
                 .setPositiveText("SHARE")
-                .setPositiveBackgroundColorResource(R.color.colorPrimary)
+                .setPositiveBackgroundColor(Color.parseColor("#e12c2c"))
                 .setPositiveTextColorResource(android.R.color.white)
                 .setNegativeText("OPEN")
-                .setNegativeTextColorResource(R.color.colorPrimaryDark)
+                .setNegativeTextColor(Color.parseColor("#e12c2c"))
                 .onPositive(dialog -> {
                     Intent share = new Intent(Intent.ACTION_SEND);
                     share.setType("image/jpeg");

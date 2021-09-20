@@ -4,12 +4,13 @@ import android.content.Intent
 import android.os.Build
 import android.os.Bundle
 import android.os.Environment
-import android.provider.MediaStore
 import android.view.View
 import android.view.Window
 import android.view.WindowManager
+import android.widget.LinearLayout
+import android.widget.ProgressBar
+import android.widget.TextView
 import com.bird.overlayer.R
-import com.bird.overlayer.extensions.launchActivity
 import com.bird.overlayer.extensions.withDelay
 import com.bird.overlayer.ui.base.BaseActivity
 import com.bird.overlayer.ui.components.main.MainActivity
@@ -24,6 +25,12 @@ class SplashActivity : BaseActivity<SplashContract.View, SplashContract.Presente
     @Inject
     lateinit var splashPresenter: SplashPresenter
 
+    private lateinit var infoText: TextView
+    private lateinit var loadingContainer: LinearLayout
+    private lateinit var filterBtn: LinearLayout
+    private lateinit var progressBar: ProgressBar
+    private var progresser: Int = 0
+
     override fun onCreate(savedInstanceState: Bundle?) {
         requestWindowFeature(Window.FEATURE_NO_TITLE)
         window.setFlags(
@@ -34,7 +41,45 @@ class SplashActivity : BaseActivity<SplashContract.View, SplashContract.Presente
     }
 
     override fun initUI() {
+        infoText = findViewById(R.id.infoText)
+        loadingContainer = findViewById(R.id.loadingContainer)
+        filterBtn = findViewById(R.id.filterBtn)
+        progressBar = findViewById(R.id.progressBar)
+    }
 
+    override fun showToast(title: String) {
+        runOnUiThread {
+            showToast(title)
+        }
+    }
+
+    override fun showProgress() {
+        runOnUiThread {
+            progresser++
+            progressBar.progress = progresser
+        }
+    }
+
+    override fun hideProgress() {
+
+    }
+
+    override fun showProgressWithTitle(title: String) {
+        runOnUiThread {
+            progresser++
+            progressBar.progress = progresser
+        }
+    }
+
+    override fun onDataReady() {
+        runOnUiThread {
+            progresser = 5
+            progressBar.progress = progresser
+            withDelay(500) {
+                loadingContainer.visibility = View.GONE
+                filterBtn.visibility = View.VISIBLE
+            }
+        }
     }
 
 

@@ -4,9 +4,7 @@ import android.graphics.Bitmap
 import android.graphics.BitmapFactory
 import android.net.Uri
 import android.os.Build
-import android.util.Log
 import android.view.View
-import android.widget.ImageView
 import android.widget.RelativeLayout
 import androidx.constraintlayout.widget.ConstraintLayout
 import com.bird.overlayer.R
@@ -14,7 +12,6 @@ import com.bird.overlayer.data.local.models.Item
 import com.bird.overlayer.extensions.toast
 import com.bird.overlayer.ui.base.BaseActivity
 import com.bird.overlayer.ui.common.CustomView
-import com.bird.overlayer.ui.common.Progress
 import com.bird.overlayer.utils.SaveAndShare
 import kotlinx.android.synthetic.main.activity_main.*
 import java.io.File
@@ -26,7 +23,6 @@ class MainActivity : BaseActivity<MainContract.View, MainContract.Presenter>(), 
     lateinit var mainPresenter: MainPresenter
     private lateinit var photoContainer: RelativeLayout
     private lateinit var itemsAdapter: ItemsAdapter
-    private lateinit var progress: Progress
     lateinit var mainCustomView: CustomView
     private var uri: Uri? = null
 
@@ -45,8 +41,6 @@ class MainActivity : BaseActivity<MainContract.View, MainContract.Presenter>(), 
             else mainCustomView.clearOverlay()
         }
         recyclerViewItemList.adapter = itemsAdapter
-        progress = Progress(this, R.string.please_wait, false)
-        progress.show()
         getMainBitmapUri()
         setMainBitmap()
     }
@@ -77,26 +71,6 @@ class MainActivity : BaseActivity<MainContract.View, MainContract.Presenter>(), 
     override fun showToast(title: String) {
         runOnUiThread {
             toast(title)
-        }
-    }
-
-    override fun showProgress() {
-        runOnUiThread {
-            if (!progress.isShowing())
-                progress.show()
-        }
-    }
-
-    override fun hideProgress() {
-        runOnUiThread {
-            progress.setProgressMessage("")
-            progress.dismiss()
-        }
-    }
-
-    override fun showProgressWithTitle(title: String) {
-        runOnUiThread {
-            progress.setProgressMessage(title)
         }
     }
 
