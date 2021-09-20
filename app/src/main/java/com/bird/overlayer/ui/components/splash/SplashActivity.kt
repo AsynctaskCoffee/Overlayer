@@ -68,6 +68,7 @@ class SplashActivity : BaseActivity<SplashContract.View, SplashContract.Presente
         runOnUiThread {
             progresser++
             progressBar.progress = progresser
+            infoText.text = title
         }
     }
 
